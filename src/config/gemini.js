@@ -8,8 +8,8 @@ import {
   HarmBlockThreshold,
 } from "@google/generative-ai";
 
-const MODEL_NAME = "gemini-1.5-pro";
-const API_KEY =  "AIzaSyAsSzdbQqzpQefll4jyL_n-mj6jhPo0npw"; // or use process.env.API_KEY
+const MODEL_NAME =  "gemini-2.0-flash";
+const API_KEY =  ""; // or use process.env.API_KEY
 
 async function runChat(prompt) {
   const genAI = new GoogleGenerativeAI(API_KEY);
@@ -50,6 +50,7 @@ async function runChat(prompt) {
   const result = await chat.sendMessage(prompt); // Replace with actual user input or prompt
   const response = result.response;
   console.log(response.text());
+  return response.text();
 }
 
 export default runChat;
